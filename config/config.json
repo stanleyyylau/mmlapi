@@ -1,0 +1,18 @@
+{
+    "test": {
+        "PORT": 4545,
+        "MONGODB_URI": "mongodb://localhost:27017/full_stack_journey_test",
+        "USERNAME": "Stanley",
+        "PASSWORD": "stanleyisawesome!",
+        "SESSION_SECRET": "poijfsasdffawefa35jpgffrdpoij3",
+        "JWT_SECRET": "fojewrjfioejriogjirejgiijijij"
+    },
+    "development": {
+        "PORT": 4545,
+        "MONGODB_URI": "mongodb://localhost:27017/mmlapi",
+        "GMAILUSERNAME": "stanleyyylauserver@gmail.com",
+        "GMAILPASSWORD": "stanleyyylau",
+        "SESSION_SECRET": "poafeawergfer34oi234oij234oij4",
+        "JWT_SECRET": "fojewrjfioejriogjirejgiijijij"
+    }
+}

@@ -1,0 +1,9 @@
+module.exports = function () {
+    const mongoose = require('mongoose');
+    mongoose.Promise = global.Promise;
+    mongoose.connect(process.env.MONGODB_URI);
+
+    mongoose.connection.on('error', () => {
+        console.log('error');
+    })
+}
