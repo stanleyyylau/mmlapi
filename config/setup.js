@@ -11,5 +11,5 @@ module.exports = function() {
         });
     }
 
-    const dbConnection = require('./mongoose')();    
+    require('./mongoose')();
 }

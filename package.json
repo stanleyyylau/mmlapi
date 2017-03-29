@@ -7,8 +7,11 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm-run-all --parallel start-server",
+    "start-server": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "esw app.* models controllers config --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -21,10 +24,19 @@
   },
   "homepage": "https://github.com/stanleyyylau/mmlapi#readme",
   "dependencies": {
+    "babel-cli": "6.16.0",
+    "babel-core": "6.17.0",
+    "babel-loader": "6.2.5",
+    "babel-preset-latest": "6.16.0",
+    "babel-register": "6.16.3",
     "body-parser": "^1.17.1",
+    "eslint": "3.8.1",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-watch": "2.1.14",
     "express": "^4.15.2",
     "mongoose": "^4.9.2",
     "nodemailer": "^3.1.8",
+    "npm-run-all": "^3.1.1",
     "request-ip": "^2.0.1"
   }
 }

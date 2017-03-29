@@ -1,6 +1,6 @@
 // Set up environment variables and DB connection
 
-var setUp = require('./config/setup')();
+require('./config/setup')();
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -22,14 +22,13 @@ const requestIp = require('request-ip');
 
 var clientIp;
 
-// inside middleware handler 
+// inside middleware handler
 const ipMiddleware = function(req, res, next) {
-    clientIp = requestIp.getClientIp(req); 
+    clientIp = requestIp.getClientIp(req);
     next();
 };
 
 app.use(ipMiddleware)
-
 
 var mailInfo = {
 	host: "smtp.gmail.com",
@@ -67,7 +66,7 @@ app.post('/leads', function(req, res) {
        },
        debug: true
   });
-  
+
   var contentFromUser = {
         website,
         page,
@@ -90,7 +89,7 @@ app.post('/leads', function(req, res) {
       }else{
           console.log('Message sent: ' + info.response);
           res.json({yo: info.response, status: 200});
-      };
+      }
   });
 
 })
@@ -104,6 +103,7 @@ app.use((err, req, res, next) => {
   console.error('got error')
   console.log(err)
   res.status(500).send('Something broke!')
+  next()
 })
 
 app.listen(port, function () {
@@ -112,4 +112,3 @@ app.listen(port, function () {
 
 // Export App for testing and server up
 module.exports = app;
-
